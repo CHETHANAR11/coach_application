@@ -40,9 +40,9 @@ class _RiveAppHomeState extends State<RiveAppHome>
   Widget _tabBody = Container(color: RiveAppTheme.background);
   final List<Widget> _screens = [
     const HomeTab(),
-    commonTabScene("Search"),
-    commonTabScene("Timer"),
-    commonTabScene("Bell"),
+    commonTabScene("STAR"),
+    commonTabScene("SEARCH"),
+    commonTabScene("TIMER"),
     commonTabScene("User"),
   ];
 
@@ -215,9 +215,6 @@ class _RiveAppHomeState extends State<RiveAppHome>
                 return SafeArea(
                   child: Row(
                     children: [
-                      // There's an issue/behaviour in flutter where translating the GestureDetector or any button
-                      // doesn't translate the touch area, making the Widget unclickable, so instead setting a SizedBox
-                      // in a Row to have a similar effect
                       SizedBox(width: _sidebarAnim.value * 216),
                       child!,
                     ],

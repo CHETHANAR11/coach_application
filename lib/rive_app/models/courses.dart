@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CourseModel {
-  CourseModel(
-      {this.id,
-      this.title = "",
-      this.subtitle = "",
-      this.caption = "",
-      this.color = Colors.white,
-      this.image = ""});
+  CourseModel({
+    this.id,
+    this.title = "",
+    this.subtitle = "",
+    this.caption = "",
+    this.color = Colors.white,
+    this.image = "",
+  });
 
   UniqueKey? id = UniqueKey();
   String title, caption, image;
@@ -16,55 +17,55 @@ class CourseModel {
 
   static List<CourseModel> courses = [
     CourseModel(
-      title: " in SwiftUI",
+      title: "Football Basics",
       subtitle:
-          "Coaching apps are designed to offer guidance, support, and resources to individuals seeking personal or professional development. These apps may cater to various niches such as life coaching, fitness coaching, career coaching, and more",
-      caption: "20 sections - 3 hour",
+          "Learn the fundamentals of football, including rules, techniques, and strategies.",
+      caption: "20 sections - 3 hours",
       color: const Color(0xFF7850F0),
-      image: 'assets/images/1_boy.webp',
+      image: 'assets/images/soo.jpg',
     ),
     CourseModel(
-      title: "Animations in ",
+      title: "Basketball Drills",
       subtitle:
-          "Coaching apps are designed to offer guidance, support, and resources to individuals seeking personal or professional development. These apps may cater to various niches such as life coaching, fitness coaching, career coaching, and more",
-      caption: "20 sections - 3 hour",
+          "Improve your basketball skills with a series of effective drills and exercises.",
+      caption: "15 sections - 2.5 hours",
       color: const Color(0xFF7850F0),
-      image: 'assets/images/1_boy.webp',
+      image: 'assets/images/soo2.jpg',
     ),
     CourseModel(
-      title: "Animations in SwiftUI",
+      title: "Soccer Techniques",
       subtitle:
-          "Coaching apps are designed to offer guidance, support, and resources to individuals seeking personal or professional development. These apps may cater to various niches such as life coaching, fitness coaching, career coaching, and more",
-      caption: "20 sections - 3 hour",
+          "Master the essential techniques of soccer, from passing to scoring goals.",
+      caption: "25 sections - 4 hours",
       color: const Color(0xFF7850F0),
-      image: 'assets/images/1_boy.webp',
-    )
+      image: 'assets/images/soo2.jpg',
+    ),
   ];
 
   static List<CourseModel> details = [
     CourseModel(
-        title: "Machien",
-        caption: "wtch me",
-        color: const Color(0xFF6E6AE8),
-        image: 'assets/images/1_boy.webp'
-        ),
+      title: "Football",
+      caption: "Watch in-depth analyses of exciting football matches.",
+      color: const Color(0xFF6E6AE8),
+      //image: 'assets/images/1_boy.webp',
+    ),
     CourseModel(
-        title: "Machien",
-        caption: "wtch me",
-        color: const Color(0xFF6E6AE8),
-        image: 'assets/images/1_boy.webp'
-        ),
+      title: "Basketball",
+      caption: "Enjoy highlights from thrilling basketball championships.",
+      color: const Color(0xFF6E6AE8),
+      //image: 'assets/images/1_boy.webp',
+    ),
     CourseModel(
-        title: "Machien",
-        caption: "wtch me",
-        color: const Color(0xFF6E6AE8),
-        image: 'assets/images/1_boy.webp'
-        ),
+      title: "Soccer",
+      caption: "Explore the intersection of soccer and machine learning.",
+      color: const Color(0xFF6E6AE8),
+      //image: 'assets/images/1_boy.webp',
+    ),
     CourseModel(
-        title: "Machien",
-        caption: "wtch me",
-        color: const Color(0xFF6E6AE8),
-        image: 'assets/images/1_boy.webp'
-        ),
+      title: "Volleyball",
+      caption: "Get insights into the training routines of top athletes.",
+      color: const Color(0xFF6E6AE8),
+     // image: 'assets/images/1_boy.webp',
+    ),
   ];
 }
