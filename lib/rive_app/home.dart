@@ -41,7 +41,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
   final List<Widget> _screens = [
     const HomeTab(),
     commonTabScene("STAR"),
-    commonTabScene("SEARCH"),
+    //commonTabScene("SEARCH"),
     commonTabScene("TIMER"),
     commonTabScene("User"),
   ];
@@ -260,7 +260,8 @@ class _RiveAppHomeState extends State<RiveAppHome>
                         0,
                         -(MediaQuery.of(context).size.height +
                                 MediaQuery.of(context).padding.bottom) *
-                            (1 - _onBoardingAnim.value)),
+                            (1 - _onBoardingAnim.value))
+                            ,
                     child: child!,
                   );
                 },

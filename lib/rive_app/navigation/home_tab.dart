@@ -29,7 +29,7 @@ class _HomeTabState extends State<HomeTab> {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                "Courses",
+                "Bounce Fit Coach",
                 style: TextStyle(fontSize: 34, fontFamily: "Poppins"),
               ),
             ),

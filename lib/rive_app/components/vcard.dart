@@ -14,63 +14,10 @@ class Vcard extends StatefulWidget {
 class _VcardState extends State<Vcard> {
   @override
   Widget build(BuildContext context) {
-    // return Container(
-    //   constraints: const BoxConstraints(maxWidth: 800,maxHeight: 350),
-    //   padding: const EdgeInsets.all(30),
-    //   decoration: BoxDecoration(
-    //     gradient: LinearGradient(
-    //         colors: [widget.course.color, widget.course.color.withOpacity(0.5)],
-    //         begin: Alignment.topLeft,
-    //         end: Alignment.bottomRight
-    //         ),
-    //     borderRadius: BorderRadius.circular(30),
-    //   ),
-    //   child: Stack(
-    //     children:[
-    //         Column(
-    //       crossAxisAlignment: CrossAxisAlignment.start,
-    //       children: [
-    //       Text(
-    //         widget.course.title,
-    //         style: const TextStyle(
-    //             fontSize: 24, fontFamily: "Poppins", color: Colors.white),
-    //       ),
-    //       const SizedBox(
-    //         height: 8,
-    //       ),
-    //       Text(
-    //         widget.course.subtitle!,
-    //         overflow: TextOverflow.ellipsis,
-    //         maxLines: 2,
-    //         softWrap: false,
-    //         style: TextStyle(fontSize: 15, color: Colors.white),
-    //       ),
-    //       const SizedBox(
-    //         height: 8,
-    //       ),
-    //       Text(
-    //         widget.course.caption.toUpperCase(),
-    //         style: const TextStyle(
-    //             fontSize: 13,
-    //             fontFamily: "Inter",
-    //             fontWeight: FontWeight.w600,
-    //             color: Colors.white),
-    //       )
-    //       ]
-    //     ),
-    //    // Positioned(child: )
-    //     ]
-    //   ),
-    // );
     return Container(
-      constraints: const BoxConstraints(maxWidth: 400,maxHeight: 250),
-      padding: const EdgeInsets.all(30),
+      constraints: const BoxConstraints(maxWidth: 300,maxHeight: 250),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        // gradient: LinearGradient(
-        //   colors: [widget.course.color,widget.course.color.withOpacity(0.5)],
-        //   begin: Alignment.topLeft,
-        //   end: Alignment.bottomRight,
-        //   ),
         image: DecorationImage(
     image: AssetImage(widget.course.image),
     fit: BoxFit.cover,
