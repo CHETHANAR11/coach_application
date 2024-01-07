@@ -8,6 +8,7 @@ import 'package:bounce_fit_coach/rive_app/theme.dart';
 import 'package:bounce_fit_coach/rive_app/navigation/side_menu.dart';
 import 'package:rive/rive.dart' hide LinearGradient;
 import 'package:bounce_fit_coach/rive_app/on_boarding/on_boarding_view.dart';
+import 'package:bounce_fit_coach/rive_app/navigation/notification_tab.dart';
 
 Widget commonTabScene(String tabName) {
   return Container(
@@ -40,10 +41,9 @@ class _RiveAppHomeState extends State<RiveAppHome>
   Widget _tabBody = Container(color: RiveAppTheme.background);
   final List<Widget> _screens = [
     const HomeTab(),
-    commonTabScene("STAR"),
-    //commonTabScene("SEARCH"),
+    const NotificationTab(),
     commonTabScene("TIMER"),
-    commonTabScene("User"),
+     commonTabScene("STAR"),
   ];
 
   final springDesc = const SpringDescription(
@@ -260,8 +260,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
                         0,
                         -(MediaQuery.of(context).size.height +
                                 MediaQuery.of(context).padding.bottom) *
-                            (1 - _onBoardingAnim.value))
-                            ,
+                            (1 - _onBoardingAnim.value)),
                     child: child!,
                   );
                 },
