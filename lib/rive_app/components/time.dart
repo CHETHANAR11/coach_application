@@ -1,19 +1,21 @@
-import 'package:bounce_fit_coach/rive_app/models/courses.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bounce_fit_coach/rive_app/theme.dart';
 import 'package:flutter/material.dart';
 
-class Hcard extends StatelessWidget {
-  const Hcard({Key? key, required this.section}) : super(key: key);
-
-  final CourseModel section;
+class Time extends StatefulWidget {
+  const Time({super.key});
 
   @override
+  State<Time> createState() => _TimeState();
+}
+
+class _TimeState extends State<Time> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
+     return Container(
       constraints: const BoxConstraints(maxHeight: 110),
       padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
       decoration: BoxDecoration(
-        color: section.color,
+        color: Colors.blue,
         borderRadius: BorderRadius.circular(30),
        ),
        child: Row(
@@ -24,7 +26,7 @@ class Hcard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  section.title,
+                  "Baseball Time",
                   style: const TextStyle(
                     fontSize: 24,
                     fontFamily: "Poppins",
@@ -33,7 +35,7 @@ class Hcard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8,),
                 Text(
-                  section.caption,
+                  "time given ",
                   style: const TextStyle(
                     fontFamily: "Inter",
                     color: Colors.white

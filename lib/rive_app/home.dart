@@ -9,6 +9,7 @@ import 'package:bounce_fit_coach/rive_app/navigation/side_menu.dart';
 import 'package:rive/rive.dart' hide LinearGradient;
 import 'package:bounce_fit_coach/rive_app/on_boarding/on_boarding_view.dart';
 import 'package:bounce_fit_coach/rive_app/navigation/notification_tab.dart';
+import 'package:bounce_fit_coach/rive_app/navigation/timer_tab.dart';
 
 Widget commonTabScene(String tabName) {
   return Container(
@@ -42,7 +43,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
   final List<Widget> _screens = [
     const HomeTab(),
     const NotificationTab(),
-    commonTabScene("TIMER"),
+    const TimerTab(),
      commonTabScene("STAR"),
   ];
 
@@ -130,7 +131,10 @@ class _RiveAppHomeState extends State<RiveAppHome>
       extendBody: true,
       body: Stack(
         children: [
-          Positioned(child: Container(color: RiveAppTheme.background2)),
+          // Positioned(
+          //   child: Container(
+          //     color: RiveAppTheme.background2)
+          //     ),
           RepaintBoundary(
             child: AnimatedBuilder(
               animation: _sidebarAnim,
@@ -228,7 +232,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
                   child: Container(
                     width: 44,
                     height: 44,
-                    margin: const EdgeInsets.all(16),
+                    margin: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(44 / 2),
                       boxShadow: [
@@ -292,33 +296,32 @@ class _RiveAppHomeState extends State<RiveAppHome>
                 ),
               ),
             ),
-          // White underlay behind the bottom tab bar
-          IgnorePointer(
-            ignoring: true,
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: AnimatedBuilder(
-                  animation: !_showOnBoarding ? _sidebarAnim : _onBoardingAnim,
-                  builder: (context, child) {
-                    return Container(
-                      height: 150,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            RiveAppTheme.background.withOpacity(0),
-                            RiveAppTheme.background.withOpacity(1 -
-                                (!_showOnBoarding
-                                    ? _sidebarAnim.value
-                                    : _onBoardingAnim.value))
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
-                      ),
-                    );
-                  }),
-            ),
-          ),
+          // IgnorePointer(
+          //   ignoring: true,
+          //   child: Align(
+          //     alignment: Alignment.bottomCenter,
+          //     child: AnimatedBuilder(
+          //         animation: !_showOnBoarding ? _sidebarAnim : _onBoardingAnim,
+          //         builder: (context, child) {
+          //           return Container(
+          //             height: 150,
+          //             decoration: BoxDecoration(
+          //               gradient: LinearGradient(
+          //                 colors: [
+          //                   RiveAppTheme.background.withOpacity(0),
+          //                   RiveAppTheme.background.withOpacity(1 -
+          //                       (!_showOnBoarding
+          //                           ? _sidebarAnim.value
+          //                           : _onBoardingAnim.value))
+          //                 ],
+          //                 begin: Alignment.topCenter,
+          //                 end: Alignment.bottomCenter,
+          //               ),
+          //             ),
+          //           );
+          //         }),
+          //   ),
+          // ),
         ],
       ),
       bottomNavigationBar: RepaintBoundary(
@@ -335,7 +338,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
             );
           },
           child: Stack(
-            alignment: Alignment.center,
+            alignment: Alignment.bottomCenter,
             children: [
               CustomTab(
                 onTabchange: (tabIndex) {

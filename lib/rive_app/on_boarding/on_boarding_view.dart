@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 import 'package:bounce_fit_coach/rive_app/on_boarding/sign_in.dart';
 import 'package:bounce_fit_coach/rive_app/theme.dart';
@@ -10,7 +9,6 @@ import 'package:rive/rive.dart';
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key, this.closeModal}) : super(key: key);
 
-  // Close modal callback for any screen that uses this as a modal
   final Function? closeModal;
 
   @override
@@ -19,10 +17,8 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView>
     with TickerProviderStateMixin {
-  // Animation controller that shows the sign up modal as well as translateY boarding content together
   AnimationController? _signInAnimController;
 
-  // Control touch effect animation for the "Start the Course" button
   late RiveAnimationController _btnController;
 
   @override
@@ -68,15 +64,12 @@ class _OnBoardingViewState extends State<OnBoardingView>
               maxWidth: double.infinity,
               child: Transform.translate(
                 offset: const Offset(200, 100),
-                child: Image.asset("assets/images/spline.png", fit: BoxFit.cover),
+                child:
+                    Image.asset("assets/images/spline.png", fit: BoxFit.cover),
               ),
             ),
           ),
         ),
-        // ImageFiltered(
-        //   imageFilter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
-        //   child: const RiveAnimation.asset(app_assets.shapesRiv),
-        // ),
         AnimatedBuilder(
           animation: _signInAnimController!,
           builder: (context, child) {
@@ -100,13 +93,13 @@ class _OnBoardingViewState extends State<OnBoardingView>
                             width: 260,
                             padding: const EdgeInsets.only(bottom: 16),
                             child: const Text(
-                              "Learn design & code",
+                              "Unlock your Potentia",
                               style: TextStyle(
-                                  fontFamily: "Poppins", fontSize: 60),
+                                  fontFamily: "Poppins", fontSize: 50),
                             ),
                           ),
                           Text(
-                            "Don’t skip design. Learn design and code, by building real apps with React and Swift. Complete courses about the best tools.",
+                            "Elevate your skills and game IQ through this. Your journey to sports mastery starts here.",
                             style: TextStyle(
                                 color: Colors.black.withOpacity(0.7),
                                 fontFamily: "Inter",
@@ -117,7 +110,6 @@ class _OnBoardingViewState extends State<OnBoardingView>
                     ),
                   ),
                   const SizedBox(height: 16),
-                  // const Spacer(),
                   GestureDetector(
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
@@ -144,13 +136,13 @@ class _OnBoardingViewState extends State<OnBoardingView>
                             Center(
                               child: Transform.translate(
                                 offset: const Offset(4, 4),
-                                child: Row(
+                                child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
+                                  children: [
                                     Icon(Icons.arrow_forward_rounded),
                                     SizedBox(width: 4),
                                     Text(
-                                      "Start the course",
+                                      "Start Training",
                                       style: TextStyle(
                                           fontSize: 16,
                                           fontFamily: "Inter",
@@ -168,14 +160,14 @@ class _OnBoardingViewState extends State<OnBoardingView>
                       _btnController.isActive = true;
                     },
                   ),
-                  const SizedBox(height: 16),
-                  Text(
-                    "Purchase includes access to 30+ courses, 240+ premium tutorials, 120+ hours of videos, source files and certificates.",
-                    style: TextStyle(
-                        color: Colors.black.withOpacity(0.7),
-                        fontFamily: "Inter",
-                        fontSize: 13),
-                  ),
+                  // const SizedBox(height: 16),
+                  // Text(
+                  //   "Purchase includes access to 30+ courses, 240+ premium tutorials, 120+ hours of videos, source files and certificates.",
+                  //   style: TextStyle(
+                  //       color: Colors.black.withOpacity(0.7),
+                  //       fontFamily: "Inter",
+                  //       fontSize: 13),
+                  // ),
                 ],
               ),
             ),
@@ -192,6 +184,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                       right: 20,
                       child: SafeArea(
                         child: CupertinoButton(
+                          alignment: Alignment.topRight,
                           padding: EdgeInsets.zero,
                           borderRadius: BorderRadius.circular(36 / 2),
                           minSize: 36,

@@ -19,13 +19,13 @@ class _VcardState extends State<Vcard> {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         image: DecorationImage(
-    image: AssetImage(widget.course.image),
-    fit: BoxFit.cover,
-    colorFilter: ColorFilter.mode(
-      widget.course.color.withOpacity(0.5),
-      BlendMode.overlay,
-    ),
-  ),
+        image: AssetImage(widget.course.image),
+        fit: BoxFit.cover,
+        colorFilter: ColorFilter.mode(
+        widget.course.color.withOpacity(0.5),
+         BlendMode.overlay,
+         ),
+         ),
          boxShadow: [
           BoxShadow(
             color: widget.course.color.withOpacity(0.9),
@@ -51,9 +51,6 @@ class _VcardState extends State<Vcard> {
               style: const TextStyle(
                   fontSize: 24, fontFamily: "Poppins"),
             ),
-            // const SizedBox(
-            //   height: 8,
-            // ),
             Text(
               widget.course.subtitle!,
               overflow: TextOverflow.ellipsis,
