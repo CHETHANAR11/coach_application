@@ -55,21 +55,24 @@ class _OnBoardingViewState extends State<OnBoardingView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      // backgroundColor: Colors.transparent,
       body: Stack(children: [
-        ImageFiltered(
-          imageFilter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
-          child: Center(
+         Center(
             child: OverflowBox(
               maxWidth: double.infinity,
               child: Transform.translate(
-                offset: const Offset(200, 100),
+                offset: const Offset(0, 0),
+                
                 child:
-                    Image.asset("assets/images/spline.png", fit: BoxFit.cover),
+                    Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Image.asset("assets/images/balls.jpg", fit: BoxFit.cover),
+          ),
               ),
             ),
           ),
-        ),
+        
         AnimatedBuilder(
           animation: _signInAnimController!,
           builder: (context, child) {
@@ -80,7 +83,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
           },
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(40, 80, 40, 40),
+              padding: const EdgeInsets.fromLTRB(40, 20, 40, 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -95,15 +98,23 @@ class _OnBoardingViewState extends State<OnBoardingView>
                             child: const Text(
                               "Unlock your Potentia",
                               style: TextStyle(
+                                color: Colors.white,
                                   fontFamily: "Poppins", fontSize: 50),
                             ),
                           ),
-                          Text(
-                            "Elevate your skills and game IQ through this. Your journey to sports mastery starts here.",
-                            style: TextStyle(
-                                color: Colors.black.withOpacity(0.7),
-                                fontFamily: "Inter",
-                                fontSize: 17),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+
+                            child: Padding(
+                              padding: const EdgeInsets.only(top:400),
+                              child: Text(
+                                "Elevate your skills and game IQ through this. Your journey to sports mastery starts here.",
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.9),
+                                    fontFamily: "Inter",
+                                    fontSize: 17),
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -145,6 +156,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
                                       "Start Training",
                                       style: TextStyle(
                                           fontSize: 16,
+                                          color: Colors.black,
                                           fontFamily: "Inter",
                                           fontWeight: FontWeight.bold),
                                     )
@@ -180,7 +192,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
               return Stack(
                 children: [
                   Positioned(
-                      top: 100 - (_signInAnimController!.value * 200),
+                    top: 10,
                       right: 20,
                       child: SafeArea(
                         child: CupertinoButton(

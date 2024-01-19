@@ -10,6 +10,7 @@ import 'package:rive/rive.dart' hide LinearGradient;
 import 'package:bounce_fit_coach/rive_app/on_boarding/on_boarding_view.dart';
 import 'package:bounce_fit_coach/rive_app/navigation/notification_tab.dart';
 import 'package:bounce_fit_coach/rive_app/navigation/timer_tab.dart';
+import 'package:bounce_fit_coach/rive_app/navigation/price_tab.dart';
 
 Widget commonTabScene(String tabName) {
   return Container(
@@ -44,7 +45,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
     const HomeTab(),
     const NotificationTab(),
     const TimerTab(),
-     commonTabScene("STAR"),
+    const PriceTab(),
   ];
 
   final springDesc = const SpringDescription(
@@ -182,7 +183,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
             animation: _sidebarAnim,
             builder: (context, child) {
               return Positioned(
-                top: MediaQuery.of(context).padding.top + 20,
+                top: MediaQuery.of(context).padding.top,
                 right: (_sidebarAnim.value * -100) + 16,
                 child: child!,
               );
@@ -192,7 +193,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
                 cursor: SystemMouseCursors.click,
                 child: Container(
                   width: 36,
-                  height: 36,
+                  height:36,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
@@ -213,46 +214,49 @@ class _RiveAppHomeState extends State<RiveAppHome>
             ),
           ),
           RepaintBoundary(
-            child: AnimatedBuilder(
-              animation: _sidebarAnim,
-              builder: (context, child) {
-                return SafeArea(
-                  child: Row(
-                    children: [
-                      SizedBox(width: _sidebarAnim.value * 216),
-                      child!,
-                    ],
-                  ),
-                );
-              },
-              child: GestureDetector(
-                onTap: onMenuPress,
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Container(
-                    width: 44,
-                    height: 44,
-                    margin: const EdgeInsets.all(6),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(44 / 2),
-                      boxShadow: [
-                        BoxShadow(
-                          color: RiveAppTheme.shadow.withOpacity(0.2),
-                          blurRadius: 5,
-                          offset: const Offset(0, 5),
-                        )
+              child: AnimatedBuilder(
+                animation: _sidebarAnim,
+                builder: (context, child) {
+                  return SafeArea(
+                    child: Row(
+                      children: [
+                        SizedBox(width: _sidebarAnim.value * 216),
+                        child!,
                       ],
                     ),
-                    child: RiveAnimation.asset(
-                      'assets/rive/menu_button.riv',
-                      stateMachines: const ["State Machine"],
-                      animations: const ["open", "close"],
-                      onInit: _onMenuIconInit,
+                  );
+                },
+                child: GestureDetector(
+                  onTap: onMenuPress,
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: Container(
+                      width: 44,
+                      height: 44,
+                      margin: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(44 / 2),
+                        boxShadow: [
+                          BoxShadow(
+                            color: RiveAppTheme.shadow.withOpacity(0.2),
+                            blurRadius: 5,
+                            offset: const Offset(0, 5),
+                          )
+                        ],
+                      ), child: Positioned(
+                        top: MediaQuery.of(context).padding.top,
+                        child: RiveAnimation.asset(
+                          'assets/rive/menu_button.riv',
+                          stateMachines: const ["State Machine"],
+                          animations: const ["open", "close"],
+                          onInit: _onMenuIconInit,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
+            
           ),
           if (_showOnBoarding)
             RepaintBoundary(

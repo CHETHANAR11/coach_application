@@ -86,10 +86,7 @@ class _SignInState extends State<SignIn> {
               constraints: const BoxConstraints(maxWidth: 600),
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.all(1),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Colors.white.withOpacity(0.8), Colors.white10]),
-              ),
+             
               child: Container(
                 padding: const EdgeInsets.all(29),
                 decoration: BoxDecoration(
@@ -143,7 +140,7 @@ class _SignInState extends State<SignIn> {
                       height: 8,
                     ),
                     TextField(
-                      decoration: authInputStyle("emgr"),
+                      decoration: authInputStyle("email"),
                       controller: _emailController,
                     ),
                     const SizedBox(
@@ -165,7 +162,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     TextField(
                       obscureText: true,
-                      decoration: authInputStyle("passw"),
+                      decoration: authInputStyle("password"),
                       controller: _passController,
                     ),
                     const SizedBox(
@@ -182,7 +179,7 @@ class _SignInState extends State<SignIn> {
                       ]),
                       child: CupertinoButton(
                         padding: const EdgeInsets.all(20),
-                        color: Color.fromARGB(255, 139, 137, 137),
+                        color: Color.fromARGB(255, 184, 31, 31),
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(8),
                           topRight: Radius.circular(20),
@@ -242,7 +239,7 @@ class _SignInState extends State<SignIn> {
                     // Row(
                     //  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     //   children: [
-                    Center(child: Image.asset("assets/signpic/googr.png")),
+                    Center(child: Image.asset("assets/signpic/google.png")),
                     //Image.asset("assets/signpic/embl1.png"),
 
                     //],
@@ -340,3 +337,5 @@ InputDecoration authInputStyle(String iconName) {
     ),
   );
 }
+
+

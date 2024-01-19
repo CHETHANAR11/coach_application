@@ -2,7 +2,6 @@ import 'package:bounce_fit_coach/rive_app/components/vcard.dart';
 import 'package:bounce_fit_coach/rive_app/components/hcard.dart';
 import 'package:bounce_fit_coach/rive_app/models/courses.dart';
 import 'package:bounce_fit_coach/rive_app/theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatefulWidget {

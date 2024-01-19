@@ -1,4 +1,3 @@
-import 'package:bounce_fit_coach/rive_app/models/tab_item.dart';
 import 'package:flutter/cupertino.dart';
 
 class MenuItemModel {

@@ -1,28 +1,26 @@
-import 'package:bounce_fit_coach/rive_app/components/time.dart';
+import 'package:bounce_fit_coach/rive_app/components/price.dart';
 import 'package:flutter/material.dart';
 import 'package:bounce_fit_coach/rive_app/theme.dart';
 
-class TimerTab extends StatefulWidget {
-  const TimerTab({Key? key}) : super(key: key);
+class PriceTab extends StatefulWidget {
+  const PriceTab({Key? key}) : super(key: key);
 
   @override
-  _TimerTabState createState() => _TimerTabState();
+  _PriceTabState createState() => _PriceTabState();
 }
 
-class _TimerTabState extends State<TimerTab> {
+class _PriceTabState extends State<PriceTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: RiveAppTheme.background,
       appBar: AppBar(
-        
-        title:  const Padding(
+        title: const  Padding(
           padding:  EdgeInsets.only(left: 40),
-          child: Text('Time')),
-        ),
+          child: Text('Awards')),),
         body: const Column(
           children: [
-           Time(),
+           Price(),
           ],
           )
     );
