@@ -86,7 +86,6 @@ class _SignInState extends State<SignIn> {
               constraints: const BoxConstraints(maxWidth: 600),
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.all(1),
-             
               child: Container(
                 padding: const EdgeInsets.all(29),
                 decoration: BoxDecoration(
@@ -337,5 +336,3 @@ InputDecoration authInputStyle(String iconName) {
     ),
   );
 }
-
-

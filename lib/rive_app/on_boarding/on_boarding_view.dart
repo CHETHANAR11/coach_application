@@ -57,22 +57,20 @@ class _OnBoardingViewState extends State<OnBoardingView>
     return Scaffold(
       // backgroundColor: Colors.transparent,
       body: Stack(children: [
-         Center(
-            child: OverflowBox(
-              maxWidth: double.infinity,
-              child: Transform.translate(
-                offset: const Offset(0, 0),
-                
+        Center(
+          child: OverflowBox(
+            maxWidth: double.infinity,
+            child: Transform.translate(
+              offset: const Offset(0, 0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
                 child:
-                    Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Image.asset("assets/images/balls.jpg", fit: BoxFit.cover),
-          ),
+                    Image.asset("assets/images/balls.jpg", fit: BoxFit.cover),
               ),
             ),
           ),
-        
+        ),
         AnimatedBuilder(
           animation: _signInAnimController!,
           builder: (context, child) {
@@ -98,15 +96,15 @@ class _OnBoardingViewState extends State<OnBoardingView>
                             child: const Text(
                               "Unlock your Potentia",
                               style: TextStyle(
-                                color: Colors.white,
-                                  fontFamily: "Poppins", fontSize: 50),
+                                  color: Colors.white,
+                                  fontFamily: "Poppins",
+                                  fontSize: 50),
                             ),
                           ),
                           Align(
                             alignment: Alignment.bottomLeft,
-
                             child: Padding(
-                              padding: const EdgeInsets.only(top:400),
+                              padding: const EdgeInsets.only(top: 350),
                               child: Text(
                                 "Elevate your skills and game IQ through this. Your journey to sports mastery starts here.",
                                 style: TextStyle(
@@ -121,6 +119,56 @@ class _OnBoardingViewState extends State<OnBoardingView>
                     ),
                   ),
                   const SizedBox(height: 16),
+                  // MouseRegion(
+                  //   cursor: SystemMouseCursors.click,
+                  //   child: Container(
+                  //     width: 10,
+                  //     height: 10,
+                     
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(30),
+                  //       boxShadow: [
+                  //         BoxShadow(
+                  //           color: Colors.black.withOpacity(0.3),
+                  //           blurRadius: 10,
+                  //           offset: const Offset(0, 10),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //     child: ElevatedButton(
+                  //       onPressed: () {
+                  //         Navigator.push(
+                  //             context,
+                  //             MaterialPageRoute(
+                  //                 builder: (context) =>
+                  //                     SignIn(closeModal: widget.closeModal)));
+                  //       },
+                  //       style: ElevatedButton.styleFrom(
+                  //         backgroundColor: Color.fromARGB(255, 241, 185, 172),
+                  //         shape: RoundedRectangleBorder(
+                  //           borderRadius: BorderRadius.circular(30),
+                  //         ),
+                  //         elevation: 0,
+                  //       ),
+                  //       child: const Row(
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         children: [
+                  //           Icon(Icons.arrow_forward_rounded),
+                  //           SizedBox(width: 4),
+                  //           Text(
+                  //             "Start Training",
+                  //             style: TextStyle(
+                  //               fontSize: 16,
+                  //               color: Colors.black,
+                  //               fontFamily: "Inter",
+                  //               fontWeight: FontWeight.bold,
+                  //             ),
+                  //           )
+                  //         ],
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   GestureDetector(
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
@@ -147,16 +195,15 @@ class _OnBoardingViewState extends State<OnBoardingView>
                             Center(
                               child: Transform.translate(
                                 offset: const Offset(4, 4),
-                                child: const Row(
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
+                                  children: const [
                                     Icon(Icons.arrow_forward_rounded),
                                     SizedBox(width: 4),
                                     Text(
                                       "Start Training",
                                       style: TextStyle(
                                           fontSize: 16,
-                                          color: Colors.black,
                                           fontFamily: "Inter",
                                           fontWeight: FontWeight.bold),
                                     )
@@ -172,14 +219,6 @@ class _OnBoardingViewState extends State<OnBoardingView>
                       _btnController.isActive = true;
                     },
                   ),
-                  // const SizedBox(height: 16),
-                  // Text(
-                  //   "Purchase includes access to 30+ courses, 240+ premium tutorials, 120+ hours of videos, source files and certificates.",
-                  //   style: TextStyle(
-                  //       color: Colors.black.withOpacity(0.7),
-                  //       fontFamily: "Inter",
-                  //       fontSize: 13),
-                  // ),
                 ],
               ),
             ),
@@ -192,7 +231,7 @@ class _OnBoardingViewState extends State<OnBoardingView>
               return Stack(
                 children: [
                   Positioned(
-                    top: 10,
+                      top: 10,
                       right: 20,
                       child: SafeArea(
                         child: CupertinoButton(

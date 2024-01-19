@@ -13,7 +13,7 @@ class Hcard extends StatelessWidget {
       constraints: const BoxConstraints(maxHeight: 110),
       padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
       decoration: BoxDecoration(
-        color: section.color,
+        color: Color.fromARGB(255, 62, 149, 154),
         borderRadius: BorderRadius.circular(30),
        ),
        child: Row(
