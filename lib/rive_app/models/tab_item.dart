@@ -15,9 +15,9 @@ class TabItem {
 
   static List<TabItem> tabItemsList = [
     TabItem(stateMachine: "USER_Interactivity", artboard: "USER"),
-    TabItem(stateMachine: "BELL_Interactivity", artboard: "BELL"),
+   // TabItem(stateMachine: "BELL_Interactivity", artboard: "BELL"),
      TabItem(stateMachine: "TIMER_Interactivity", artboard: "TIMER"),
-    TabItem(stateMachine: "STAR_Interactivity", artboard: "LIKE/STAR"),
+    //TabItem(stateMachine: "STAR_Interactivity", artboard: "LIKE/STAR"),
    
     //TabItem(stateMachine: "SEARCH_Interactivity", artboard: "SEARCH"),
     //TabItem(stateMachine: "PRICE", artboard: "price"),

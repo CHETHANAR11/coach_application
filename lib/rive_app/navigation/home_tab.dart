@@ -1,19 +1,29 @@
 import 'package:bounce_fit_coach/rive_app/components/vcard.dart';
 import 'package:bounce_fit_coach/rive_app/components/hcard.dart';
 import 'package:bounce_fit_coach/rive_app/models/courses.dart';
+import 'package:bounce_fit_coach/rive_app/components/gamefill_tab.dart';
 import 'package:bounce_fit_coach/rive_app/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatefulWidget {
-  const HomeTab({super.key});
+  const HomeTab({Key? key}) : super(key: key);
 
   @override
   State<HomeTab> createState() => _HomeTabState();
 }
 
 class _HomeTabState extends State<HomeTab> {
-  final List<CourseModel> _courses = CourseModel.courses;
   final List<CourseModel> _details = CourseModel.details;
+   List<String> selectedPlayers = [];
+  
+   void onGameDetailsEntered(String name, String time, List<String> selectedPlayers) {
+    setState(() {
+      this.selectedPlayers = selectedPlayers;
+    });
+  }
+  void onGameDetailsEnteredForNavigation(String name, String time) {
+  onGameDetailsEntered(name, time, selectedPlayers);
+}
 
   @override
   Widget build(BuildContext context) {
@@ -32,19 +42,6 @@ class _HomeTabState extends State<HomeTab> {
                 style: TextStyle(fontSize: 34, fontFamily: "Poppins"),
               ),
             ),
-            // Vcard(course: _courses[1])
-            SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: _courses
-                    .map((course) => Padding(
-                        key: course.id,
-                        padding: const EdgeInsets.all(10),
-                        child: Vcard(course: course)))
-                    .toList(),
-              ),
-            ),
             const Padding(
               padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
               child: Text(
@@ -55,10 +52,35 @@ class _HomeTabState extends State<HomeTab> {
            ...List.generate(_details.length, (index) =>  Padding(
             key: _details[index].id,
             padding:const EdgeInsets.fromLTRB(20, 0, 20, 20),
-            child: Hcard(section: _details[index])),)
+            child: Hcard(section: _details[index],
+  selectedPlayers: selectedPlayers,)
+            ),)
           ],
         ),
       ),
+   floatingActionButton: Column(
+  mainAxisAlignment: MainAxisAlignment.end,
+  children: [
+    FloatingActionButton(
+      onPressed: selectedPlayers.isNotEmpty
+          ? () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GamePage(
+                    selectedPlayers: selectedPlayers,
+                    onGameDetailsEntered: onGameDetailsEnteredForNavigation,
+                  ),
+                ),
+              );
+            }
+          : null, // Disable the button if no players are selected
+      child: Icon(Icons.add),
+    ),
+    SizedBox(height: 56),
+  ],
+),
+
     );
   }
 }

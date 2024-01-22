@@ -43,9 +43,9 @@ class _RiveAppHomeState extends State<RiveAppHome>
   Widget _tabBody = Container(color: RiveAppTheme.background);
   final List<Widget> _screens = [
     const HomeTab(),
-    const NotificationTab(),
+    // const NotificationTab(),
     const TimerTab(),
-    const PriceTab(),
+    //const PriceTab(),
   ];
 
   final springDesc = const SpringDescription(
@@ -132,10 +132,6 @@ class _RiveAppHomeState extends State<RiveAppHome>
       extendBody: true,
       body: Stack(
         children: [
-          // Positioned(
-          //   child: Container(
-          //     color: RiveAppTheme.background2)
-          //     ),
           RepaintBoundary(
             child: AnimatedBuilder(
               animation: _sidebarAnim,
@@ -300,32 +296,7 @@ class _RiveAppHomeState extends State<RiveAppHome>
                 ),
               ),
             ),
-          // IgnorePointer(
-          //   ignoring: true,
-          //   child: Align(
-          //     alignment: Alignment.bottomCenter,
-          //     child: AnimatedBuilder(
-          //         animation: !_showOnBoarding ? _sidebarAnim : _onBoardingAnim,
-          //         builder: (context, child) {
-          //           return Container(
-          //             height: 150,
-          //             decoration: BoxDecoration(
-          //               gradient: LinearGradient(
-          //                 colors: [
-          //                   RiveAppTheme.background.withOpacity(0),
-          //                   RiveAppTheme.background.withOpacity(1 -
-          //                       (!_showOnBoarding
-          //                           ? _sidebarAnim.value
-          //                           : _onBoardingAnim.value))
-          //                 ],
-          //                 begin: Alignment.topCenter,
-          //                 end: Alignment.bottomCenter,
-          //               ),
-          //             ),
-          //           );
-          //         }),
-          //   ),
-          // ),
+          
         ],
       ),
       bottomNavigationBar: RepaintBoundary(
