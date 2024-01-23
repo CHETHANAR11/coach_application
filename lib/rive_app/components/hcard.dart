@@ -3,10 +3,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Hcard extends StatefulWidget {
-  const Hcard({Key? key, required this.section,required this.selectedPlayers}) : super(key: key);
+  const Hcard(
+      {Key? key,
+      required this.section,
+      required this.selectedPlayers,
+      required this.deselect})
+      : super(key: key);
 
   final CourseModel section;
-  final List<String> selectedPlayers; 
+  final List<String> selectedPlayers;
+  final VoidCallback deselect;
 
   @override
   State<Hcard> createState() => _HcardState();
@@ -14,6 +20,7 @@ class Hcard extends StatefulWidget {
 
 class _HcardState extends State<Hcard> {
   bool isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +42,7 @@ class _HcardState extends State<Hcard> {
                   style: const TextStyle(
                     fontSize: 24,
                     fontFamily: "Poppins",
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 67, 69, 68),
                   ),
                 ),
                 const SizedBox(
@@ -55,10 +62,9 @@ class _HcardState extends State<Hcard> {
                   isSelected = !isSelected;
                   if (isSelected) {
                     widget.selectedPlayers.add(widget.section.title);
-                  }
-                  else{
+                    widget.deselect();
+                  } else {
                     widget.selectedPlayers.remove(widget.section.title);
-
                   }
                 });
               },
@@ -66,6 +72,7 @@ class _HcardState extends State<Hcard> {
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
+                  border: Border.all(color: Colors.black),
                   color: isSelected
                       ? Colors.black
                       : Color.fromARGB(255, 236, 230, 229),

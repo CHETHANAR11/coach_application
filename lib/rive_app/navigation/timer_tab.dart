@@ -10,21 +10,29 @@ class TimerTab extends StatefulWidget {
 }
 
 class _TimerTabState extends State<TimerTab> {
+  String gameName = '';
+  String gameTime = '';
+  
+  void updateTimer(String name, String time) {
+    setState(() {
+      gameName = name;
+      gameTime = time;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: RiveAppTheme.background,
-      appBar: AppBar(
-        
-        title:  const Padding(
-          padding:  EdgeInsets.only(left: 40),
-          child: Text('Time')),
+        backgroundColor: RiveAppTheme.background,
+        appBar: AppBar(
+          title: const Padding(
+              padding: EdgeInsets.only(left: 40), child: Text('Time')),
         ),
-        body: const Column(
+        body: Column(
           children: [
-           Time(),
+            Time(gameName: gameName, gameTime: gameTime),
           ],
-          )
-    );
-     }
+        ));
+  }
+
+  
 }

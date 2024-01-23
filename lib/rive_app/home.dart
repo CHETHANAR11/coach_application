@@ -8,9 +8,8 @@ import 'package:bounce_fit_coach/rive_app/theme.dart';
 import 'package:bounce_fit_coach/rive_app/navigation/side_menu.dart';
 import 'package:rive/rive.dart' hide LinearGradient;
 import 'package:bounce_fit_coach/rive_app/on_boarding/on_boarding_view.dart';
-import 'package:bounce_fit_coach/rive_app/navigation/notification_tab.dart';
+// import 'package:bounce_fit_coach/rive_app/navigation/notification_tab.dart';
 import 'package:bounce_fit_coach/rive_app/navigation/timer_tab.dart';
-import 'package:bounce_fit_coach/rive_app/navigation/price_tab.dart';
 
 Widget commonTabScene(String tabName) {
   return Container(
