@@ -46,13 +46,6 @@ class _CustomTabState extends State<CustomTab> {
       child: Container(
         margin: const EdgeInsets.fromLTRB(24, 0, 24, 8),
         padding: const EdgeInsets.all(1),
-        // decoration: BoxDecoration(
-        //   borderRadius: BorderRadius.circular(24),
-        //   gradient: LinearGradient(colors: [
-        //     Colors.white.withOpacity(0.5),
-        //     Colors.white.withOpacity(0),
-        //   ]),
-        // ),
         child: Container(
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
